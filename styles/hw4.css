@@ -1,0 +1,49 @@
+span, div{
+    border: 1px solid black;
+    width: 400px;
+    
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+input{
+    width: 300px;
+    text-align: center;
+}
+
+.button{
+    width: 120px;
+    margin: 15px 0 15px 0;
+}
+
+#cont1{
+    margin: 20px auto 0 auto;
+    height: 540px;
+    width: 400px;
+}
+
+#cont2{
+    height: 500px;
+    width: 399px;
+}
+
+#cont3{
+    width: 121px;
+    height: 241px;
+    margin: 50px auto 0 auto;
+}
+
+#display{
+    height: 80px;
+    margin: 30px 0 10px 0;
+}
+
+#header{
+    font-size: 20px;
+    margin: 15px 0 0 0;
+    padding: 0px 0 0 0;
+}
+
+#start{
+    margin: 10px 0 0 0;
+}
