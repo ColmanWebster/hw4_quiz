@@ -13,11 +13,16 @@ var display = document.getElementById("display");
 
     start.addEventListener('click', Timer);
 
+    var int;
+
     function Timer(){
-        setInterval(Time1, 2000);
+        int = setInterval(Time1, 2000);
         start.remove();
+ 
+    }
+    function Time1(){
+        display.value = "Two-Second Timer";    
+        clearInterval(int);      
     }
 
-    function Time1(){
-        display.value = "Two-Second Timer";
-    }
+    
