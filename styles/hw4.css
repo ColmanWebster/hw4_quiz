@@ -1,5 +1,5 @@
 span, div{
-    border: 1px solid black;
+    
     width: 400px;
     
     text-align: center;
@@ -17,6 +17,7 @@ input{
 }
 
 #cont1{
+    border: 1px solid black;
     margin: 20px auto 0 auto;
     height: 540px;
     width: 400px;
