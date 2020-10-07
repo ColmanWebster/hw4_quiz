@@ -21,9 +21,14 @@ var start =   document.querySelector('#start');
 var press = 0;
 var int;
 var pausetime;
+var timeout;
 var correct = 0;
+var hiscores = JSON.parse(localStorage.getItem(hiscores));
 
-pausetime = 120;
+
+pausetime = 10;
+timeout = 10;
+
 prompts.value = pausetime;
 
 start.addEventListener('click', function(event){
@@ -37,13 +42,17 @@ start.addEventListener('click', function(event){
         };
         function Time1(){
             if (prompts.value > 0){
-            prompts.value -= 1;          
+            prompts.value -= 1;
+                      
         } else{
+            
             clearInterval(int);
-            pausetime = 10;
-            prompts.value = pausetime;
+           /* pausetime = 10; */
+            /* prompts.value = pausetime; */
             start.textContent = "START";
             press = 0;
+            correct = correct + pausetime;
+            document.write("you dudn't dooit. score: " + correct);
         }
         };
         Timer();
@@ -84,14 +93,30 @@ start.addEventListener('click', function(){
         correct ++;
 
 
-        if (pausetime == 0 || correct == 3){
+        if (correct == 3 ){
 
-            document.write('congration you done it');
+            clearInterval(int);
+            /* document.getElementsByTagName('body')[0].innerHTML = hiscores; */
+            var Score = prompt("Please enter your initials: ", "XXX");
+            correct = correct + prompts.value;
+            if (!localStorage.getItem("hiscores")){
+                localStorage.setItem('hiscores', hiscores);
+            }
+            hiscores.push(Score + ": " + correct);
+            
+            JSON.stringify(hiscores);
+            localStorage.setItem("hiscores", hiscores);
+            document.write(hiscores);
         }
 
 
         display.value = questionsList[b];
         Loop();
+    
+    } else if (event.target.matches('.button') && event.target.textContent != answerKey[b]){
+        pausetime-=10 ;
+        correct --;
+        prompts.value = pausetime;
     }
 });
 
